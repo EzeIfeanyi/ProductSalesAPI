@@ -16,7 +16,9 @@ using ProductSalesAPI.Application.UserAuthentication.Command.Register;
 using ProductSalesAPI.Infrastructure;
 using ProductSalesAPI.Infrastructure.DataAccess;
 using ProductSalesAPI.Infrastructure.DataAccess.Repositories;
+using System.Net;
 using System.Text;
+using System.Text.Json;
 
 namespace ProductSalesAPI.Presentation.Extensions;
 
@@ -72,6 +74,17 @@ public static class ServiceExtensions
                 ValidIssuer = jwtSettings.Issuer,
                 ValidAudience = jwtSettings.Audience,
                 IssuerSigningKey = new SymmetricSecurityKey(key)
+            };
+            options.Events = new JwtBearerEvents
+            {
+                OnChallenge = context =>
+                {
+                    context.HandleResponse();
+                    context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    context.Response.ContentType = "application/json";
+                    var response = new ApiResponse<string>(false, "Unauthorized access", "Access denied.");
+                    return context.Response.WriteAsync(JsonSerializer.Serialize(response));
+                }
             };
         });
 
