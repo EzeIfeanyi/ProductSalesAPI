@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "BmyCG0PK++C5KxC/0KyCFT/RZjQ84pqI1oqQkYyPJbo=",
+  "Source": "ProductSalesAPI.Presentation",
+  "BasePath": "_content/ProductSalesAPI.Presentation",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

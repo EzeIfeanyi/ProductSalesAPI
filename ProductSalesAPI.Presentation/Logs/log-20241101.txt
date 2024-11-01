@@ -1,0 +1,310 @@
+2024-11-01 11:55:12 [INF] Initializing the database...
+2024-11-01 11:57:41 [INF] Initializing the database...
+2024-11-01 11:57:42 [INF] Users table created or already exists.
+2024-11-01 11:57:42 [INF] Products table created or already exists.
+2024-11-01 11:57:42 [INF] SalesOrders table created or already exists.
+2024-11-01 11:57:42 [INF] Seeding data into the database...
+2024-11-01 11:57:45 [INF] Default users seeded into the database.
+2024-11-01 11:57:45 [INF] Default products seeded into the database.
+2024-11-01 11:57:45 [INF] Default sales orders seeded into the database.
+2024-11-01 11:57:45 [INF] Data seeding completed.
+2024-11-01 11:57:45 [INF] Database initialization completed.
+2024-11-01 12:03:02 [ERR] An unhandled exception occurred during the request.
+Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5433
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.ExecuteScalarImplAsync[T](IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1240
+   at ProductSalesAPI.Infrastructure.DataAccess.Repositories.UserRepository.AddAsync(User user) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Infrastructure\DataAccess\Repositories\UserRepository.cs:line 22
+   at ProductSalesAPI.Application.Commands.RegisterUserCommandHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Commands\RegisterUserCommand.cs:line 26
+   at ProductSalesAPI.Presentation.Controllers.AuthController.Register(RegisterUserCommand command) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Presentation\Controllers\AuthController.cs:line 24
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductSalesAPI.Application.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Middleware\ExceptionMiddleware.cs:line 25
+2024-11-01 12:03:03 [ERR] Internal server error occurred.
+Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5433
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.ExecuteScalarImplAsync[T](IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1240
+   at ProductSalesAPI.Infrastructure.DataAccess.Repositories.UserRepository.AddAsync(User user) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Infrastructure\DataAccess\Repositories\UserRepository.cs:line 22
+   at ProductSalesAPI.Application.Commands.RegisterUserCommandHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Commands\RegisterUserCommand.cs:line 26
+   at ProductSalesAPI.Presentation.Controllers.AuthController.Register(RegisterUserCommand command) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Presentation\Controllers\AuthController.cs:line 24
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductSalesAPI.Application.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Middleware\ExceptionMiddleware.cs:line 25
+2024-11-01 12:03:32 [ERR] An unhandled exception occurred during the request.
+Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5433
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.ExecuteScalarImplAsync[T](IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1240
+   at ProductSalesAPI.Infrastructure.DataAccess.Repositories.UserRepository.AddAsync(User user) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Infrastructure\DataAccess\Repositories\UserRepository.cs:line 22
+   at ProductSalesAPI.Application.Commands.RegisterUserCommandHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Commands\RegisterUserCommand.cs:line 26
+   at ProductSalesAPI.Presentation.Controllers.AuthController.Register(RegisterUserCommand command) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Presentation\Controllers\AuthController.cs:line 24
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductSalesAPI.Application.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Middleware\ExceptionMiddleware.cs:line 25
+2024-11-01 12:03:32 [ERR] Internal server error occurred.
+Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5433
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.ExecuteScalarImplAsync[T](IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1240
+   at ProductSalesAPI.Infrastructure.DataAccess.Repositories.UserRepository.AddAsync(User user) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Infrastructure\DataAccess\Repositories\UserRepository.cs:line 22
+   at ProductSalesAPI.Application.Commands.RegisterUserCommandHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Commands\RegisterUserCommand.cs:line 26
+   at ProductSalesAPI.Presentation.Controllers.AuthController.Register(RegisterUserCommand command) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Presentation\Controllers\AuthController.cs:line 24
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductSalesAPI.Application.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\liams\source\repos\ProductSalesAPI\ProductSalesAPI.Application\Middleware\ExceptionMiddleware.cs:line 25
+2024-11-01 12:06:17 [INF] Retrieved user Adam.
+2024-11-01 12:06:17 [INF] User Adam logged in successfully.
+2024-11-01 12:06:50 [INF] Retrieved 3 sales orders.
+2024-11-01 12:06:50 [INF] Retrieved 3 products.
+2024-11-01 12:06:50 [INF] Retrieved 3 products.
+2024-11-01 12:06:50 [INF] Retrieved 3 products.
+2024-11-01 12:06:50 [INF] Retrieved 3 products.
+2024-11-01 12:06:50 [INF] Retrieved 3 products.
+2024-11-01 12:06:50 [INF] Retrieved 3 products.
+2024-11-01 12:06:50 [INF] Retrieved highest quantity sold products: Count 3
+2024-11-01 12:07:06 [INF] Retrieved 3 sales orders.
+2024-11-01 12:07:06 [INF] Retrieved 3 products.
+2024-11-01 12:07:06 [INF] Retrieved 3 products.
+2024-11-01 12:07:06 [INF] Retrieved 3 products.
+2024-11-01 12:07:06 [INF] Retrieved 3 products.
+2024-11-01 12:07:06 [INF] Retrieved 3 products.
+2024-11-01 12:07:06 [INF] Retrieved 3 products.
+2024-11-01 12:07:06 [INF] Retrieved highest total price sold products: Count 3
+2024-11-01 12:11:38 [INF] Initializing the database...
+2024-11-01 12:11:40 [INF] Users table created or already exists.
+2024-11-01 12:11:40 [INF] Products table created or already exists.
+2024-11-01 12:11:40 [INF] SalesOrders table created or already exists.
+2024-11-01 12:11:40 [INF] Seeding data into the database...
+2024-11-01 12:11:40 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 12:11:40 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 12:11:40 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 12:11:40 [INF] Data seeding completed.
+2024-11-01 12:11:40 [INF] Database initialization completed.
+2024-11-01 14:49:15 [INF] Initializing the database...
+2024-11-01 14:49:16 [INF] Users table created or already exists.
+2024-11-01 14:49:16 [INF] Products table created or already exists.
+2024-11-01 14:49:16 [INF] SalesOrders table created or already exists.
+2024-11-01 14:49:16 [INF] Seeding data into the database...
+2024-11-01 14:49:16 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 14:49:16 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 14:49:16 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 14:49:16 [INF] Data seeding completed.
+2024-11-01 14:49:16 [INF] Database initialization completed.
+2024-11-01 14:49:34 [INF] Retrieved user s.
+2024-11-01 14:49:34 [WRN] Invalid login attempt for username s.
+2024-11-01 14:52:54 [INF] Retrieved user string.
+2024-11-01 14:52:54 [WRN] Invalid login attempt for username string.
+2024-11-01 14:53:33 [INF] Retrieved user Adam.
+2024-11-01 14:53:33 [INF] User Adam logged in successfully.
+2024-11-01 14:54:01 [INF] Retrieved 3 sales orders.
+2024-11-01 14:54:01 [INF] Retrieved 3 products.
+2024-11-01 14:54:01 [INF] Retrieved 3 products.
+2024-11-01 14:54:02 [INF] Retrieved 3 products.
+2024-11-01 14:54:02 [INF] Retrieved 3 products.
+2024-11-01 14:54:02 [INF] Retrieved 3 products.
+2024-11-01 14:54:02 [INF] Retrieved 3 products.
+2024-11-01 14:54:02 [INF] Retrieved highest quantity sold products: Count 3
+2024-11-01 14:54:18 [INF] Retrieved 3 sales orders.
+2024-11-01 14:54:18 [INF] Retrieved 3 products.
+2024-11-01 14:54:18 [INF] Retrieved 3 products.
+2024-11-01 14:54:18 [INF] Retrieved 3 products.
+2024-11-01 14:54:18 [INF] Retrieved 3 products.
+2024-11-01 14:54:18 [INF] Retrieved 3 products.
+2024-11-01 14:54:18 [INF] Retrieved 3 products.
+2024-11-01 14:54:18 [INF] Retrieved highest total price sold products: Count 3
+2024-11-01 14:54:35 [INF] Sales orders retrieved successfully. Count: 3
+2024-11-01 14:54:48 [INF] Products retrieved successfully. Count: 3
+2024-11-01 14:55:05 [INF] Products retrieved successfully. Count: 3
+2024-11-01 14:55:13 [INF] Products retrieved successfully. Count: 3
+2024-11-01 15:46:09 [INF] Initializing the database...
+2024-11-01 15:46:10 [INF] Users table created or already exists.
+2024-11-01 15:46:10 [INF] Products table created or already exists.
+2024-11-01 15:46:10 [INF] SalesOrders table created or already exists.
+2024-11-01 15:46:10 [INF] Seeding data into the database...
+2024-11-01 15:46:10 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 15:46:10 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 15:46:10 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 15:46:10 [INF] Data seeding completed.
+2024-11-01 15:46:10 [INF] Database initialization completed.
+2024-11-01 16:21:46 [INF] Initializing the database...
+2024-11-01 16:21:47 [INF] Users table created or already exists.
+2024-11-01 16:21:47 [INF] Products table created or already exists.
+2024-11-01 16:21:47 [INF] SalesOrders table created or already exists.
+2024-11-01 16:21:47 [INF] Seeding data into the database...
+2024-11-01 16:21:47 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 16:21:47 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 16:21:47 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 16:21:47 [INF] Data seeding completed.
+2024-11-01 16:21:47 [INF] Database initialization completed.
+2024-11-01 16:28:26 [INF] Initializing the database...
+2024-11-01 16:28:27 [INF] Users table created or already exists.
+2024-11-01 16:28:27 [INF] Products table created or already exists.
+2024-11-01 16:28:27 [INF] SalesOrders table created or already exists.
+2024-11-01 16:28:27 [INF] Seeding data into the database...
+2024-11-01 16:28:27 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 16:28:27 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 16:28:27 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 16:28:27 [INF] Data seeding completed.
+2024-11-01 16:28:27 [INF] Database initialization completed.
+2024-11-01 16:49:17 [INF] Initializing the database...
+2024-11-01 16:49:17 [INF] Users table created or already exists.
+2024-11-01 16:49:17 [INF] Products table created or already exists.
+2024-11-01 16:49:17 [INF] SalesOrders table created or already exists.
+2024-11-01 16:49:17 [INF] Seeding data into the database...
+2024-11-01 16:49:17 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 16:49:17 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 16:49:17 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 16:49:17 [INF] Data seeding completed.
+2024-11-01 16:49:17 [INF] Database initialization completed.
+2024-11-01 16:51:23 [INF] Initializing the database...
+2024-11-01 16:51:24 [INF] Users table created or already exists.
+2024-11-01 16:51:24 [INF] Products table created or already exists.
+2024-11-01 16:51:24 [INF] SalesOrders table created or already exists.
+2024-11-01 16:51:24 [INF] Seeding data into the database...
+2024-11-01 16:51:24 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 16:51:24 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 16:51:24 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 16:51:24 [INF] Data seeding completed.
+2024-11-01 16:51:24 [INF] Database initialization completed.
+2024-11-01 16:52:01 [INF] Initializing the database...
+2024-11-01 16:52:01 [INF] Users table created or already exists.
+2024-11-01 16:52:01 [INF] Products table created or already exists.
+2024-11-01 16:52:01 [INF] SalesOrders table created or already exists.
+2024-11-01 16:52:01 [INF] Seeding data into the database...
+2024-11-01 16:52:01 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 16:52:01 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 16:52:01 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 16:52:01 [INF] Data seeding completed.
+2024-11-01 16:52:01 [INF] Database initialization completed.
+2024-11-01 16:52:43 [INF] Retrieved user Adam.
+2024-11-01 16:52:43 [INF] User Adam logged in successfully.
+2024-11-01 16:54:13 [INF] Product created with ID 4.
+2024-11-01 16:54:13 [INF] Product created with ID 4.
+2024-11-01 16:54:13 [INF] Product created with ID 4.
+2024-11-01 17:04:49 [INF] Initializing the database...
+2024-11-01 17:04:49 [INF] Users table created or already exists.
+2024-11-01 17:04:49 [INF] Products table created or already exists.
+2024-11-01 17:04:49 [INF] SalesOrders table created or already exists.
+2024-11-01 17:04:49 [INF] Seeding data into the database...
+2024-11-01 17:04:49 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 17:04:49 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 17:04:49 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 17:04:49 [INF] Data seeding completed.
+2024-11-01 17:04:49 [INF] Database initialization completed.
+2024-11-01 17:05:54 [INF] Product created with ID 5.
+2024-11-01 17:05:54 [INF] Product created with ID 5.
+2024-11-01 17:05:54 [INF] Product created with ID 5.
+2024-11-01 17:12:01 [INF] Initializing the database...
+2024-11-01 17:12:01 [INF] Users table created or already exists.
+2024-11-01 17:12:01 [INF] Products table created or already exists.
+2024-11-01 17:12:01 [INF] SalesOrders table created or already exists.
+2024-11-01 17:12:01 [INF] Seeding data into the database...
+2024-11-01 17:12:01 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 17:12:01 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 17:12:01 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 17:12:01 [INF] Data seeding completed.
+2024-11-01 17:12:01 [INF] Database initialization completed.
+2024-11-01 17:16:58 [INF] Initializing the database...
+2024-11-01 17:16:58 [INF] Users table created or already exists.
+2024-11-01 17:16:58 [INF] Products table created or already exists.
+2024-11-01 17:16:58 [INF] SalesOrders table created or already exists.
+2024-11-01 17:16:58 [INF] Seeding data into the database...
+2024-11-01 17:16:58 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 17:16:58 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 17:16:58 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 17:16:58 [INF] Data seeding completed.
+2024-11-01 17:16:58 [INF] Database initialization completed.
+2024-11-01 17:35:26 [INF] Initializing the database...
+2024-11-01 17:35:27 [INF] Users table created or already exists.
+2024-11-01 17:35:27 [INF] Products table created or already exists.
+2024-11-01 17:35:27 [INF] SalesOrders table created or already exists.
+2024-11-01 17:35:27 [INF] Seeding data into the database...
+2024-11-01 17:35:27 [INF] Users already exist in the database. Skipping seeding.
+2024-11-01 17:35:27 [INF] Products already exist in the database. Skipping seeding.
+2024-11-01 17:35:27 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-11-01 17:35:27 [INF] Data seeding completed.
+2024-11-01 17:35:27 [INF] Database initialization completed.
+2024-11-01 17:38:12 [INF] Product created with ID 6.
+2024-11-01 17:38:12 [INF] Product created with ID 6.
+2024-11-01 17:38:12 [INF] Product created with ID 6.

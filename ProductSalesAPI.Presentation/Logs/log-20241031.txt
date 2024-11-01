@@ -1,0 +1,58 @@
+2024-10-31 17:33:22 [INF] Initializing the database...
+2024-10-31 17:33:22 [INF] Users table created or already exists.
+2024-10-31 17:33:22 [INF] Products table created or already exists.
+2024-10-31 17:33:22 [INF] SalesOrders table created or already exists.
+2024-10-31 17:33:22 [INF] Seeding data into the database...
+2024-10-31 17:33:22 [INF] Users already exist in the database. Skipping seeding.
+2024-10-31 17:33:22 [INF] Products already exist in the database. Skipping seeding.
+2024-10-31 17:33:22 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-10-31 17:33:22 [INF] Data seeding completed.
+2024-10-31 17:33:22 [INF] Database initialization completed.
+2024-10-31 22:19:47 [INF] Initializing the database...
+2024-10-31 22:19:47 [INF] Users table created or already exists.
+2024-10-31 22:19:47 [INF] Products table created or already exists.
+2024-10-31 22:19:47 [INF] SalesOrders table created or already exists.
+2024-10-31 22:19:47 [INF] Seeding data into the database...
+2024-10-31 22:19:47 [INF] Users already exist in the database. Skipping seeding.
+2024-10-31 22:19:47 [INF] Products already exist in the database. Skipping seeding.
+2024-10-31 22:19:47 [INF] Sales orders already exist in the database. Skipping seeding.
+2024-10-31 22:19:47 [INF] Data seeding completed.
+2024-10-31 22:19:47 [INF] Database initialization completed.
+2024-10-31 22:20:57 [INF] Retrieved user Adam.
+2024-10-31 22:20:57 [INF] User Adam logged in successfully.
+2024-10-31 22:20:57 [INF] User Adam logged in successfully.
+2024-10-31 22:21:29 [INF] Retrieved 2 sales orders.
+2024-10-31 22:21:29 [INF] Retrieved 2 products.
+2024-10-31 22:21:29 [INF] Retrieved 2 products.
+2024-10-31 22:21:29 [INF] Retrieved 2 products.
+2024-10-31 22:21:29 [INF] Retrieved 2 products.
+2024-10-31 22:21:29 [INF] Retrieved highest quantity sold products: Count 2
+2024-10-31 22:21:51 [INF] Retrieved 2 sales orders.
+2024-10-31 22:21:51 [INF] Retrieved 2 products.
+2024-10-31 22:21:51 [INF] Retrieved 2 products.
+2024-10-31 22:21:51 [INF] Retrieved 2 products.
+2024-10-31 22:21:51 [INF] Retrieved 2 products.
+2024-10-31 22:21:51 [INF] Retrieved highest total price sold products: Count 2
+2024-10-31 22:22:31 [INF] Products retrieved successfully. Count: 2
+2024-10-31 22:23:06 [INF] Product created with ID 3.
+2024-10-31 22:23:06 [INF] Product created with ID 3.
+2024-10-31 22:23:06 [INF] Product created with ID 3.
+2024-10-31 22:23:37 [INF] Sales order created with ID 3.
+2024-10-31 22:23:37 [INF] Sales order created with ID 3.
+2024-10-31 22:23:37 [INF] Sales order created with ID 3.
+2024-10-31 22:23:48 [INF] Retrieved 3 sales orders.
+2024-10-31 22:23:48 [INF] Retrieved 3 products.
+2024-10-31 22:23:48 [INF] Retrieved 3 products.
+2024-10-31 22:23:48 [INF] Retrieved 3 products.
+2024-10-31 22:23:48 [INF] Retrieved 3 products.
+2024-10-31 22:23:49 [INF] Retrieved 3 products.
+2024-10-31 22:23:49 [INF] Retrieved 3 products.
+2024-10-31 22:23:49 [INF] Retrieved highest quantity sold products: Count 3
+2024-10-31 22:23:57 [INF] Retrieved 3 sales orders.
+2024-10-31 22:23:57 [INF] Retrieved 3 products.
+2024-10-31 22:23:57 [INF] Retrieved 3 products.
+2024-10-31 22:23:57 [INF] Retrieved 3 products.
+2024-10-31 22:23:57 [INF] Retrieved 3 products.
+2024-10-31 22:23:57 [INF] Retrieved 3 products.
+2024-10-31 22:23:57 [INF] Retrieved 3 products.
+2024-10-31 22:23:57 [INF] Retrieved highest total price sold products: Count 3
