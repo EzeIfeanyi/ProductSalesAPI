@@ -4,10 +4,10 @@ namespace ProductSalesAPI.Application.ApiUtilities;
 
 public class NotificationsHub : Hub
 {
-    public override Task OnConnectedAsync()
+    public async override Task OnConnectedAsync()
     {
-        Clients.All.SendAsync("ReceiveMessage", Context.ConnectionId);
+        await Clients.Caller.SendAsync("ReceiveMessage", Context.ConnectionId);
 
-        return base.OnConnectedAsync();
+        await base.OnConnectedAsync();
     }
 }
